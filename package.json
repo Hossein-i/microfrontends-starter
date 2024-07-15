@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "start": "turbo run start",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "commit": "git-cz",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "turbo": "^2.0.6",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "commitizen": "^4.3.0",
+    "cz-emoji-conventional": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "name": "microfrontends-starter",
+  "packageManager": "npm@10.8.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "../../node_modules/cz-emoji-conventional"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
